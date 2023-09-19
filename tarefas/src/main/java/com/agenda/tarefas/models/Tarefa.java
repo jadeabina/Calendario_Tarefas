@@ -1,6 +1,8 @@
 package com.agenda.tarefas.models;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import jakarta.persistence.*;
 
 import java.sql.Time;
@@ -17,20 +19,23 @@ public class Tarefa {
     @Column(name = "nome") //@Columna anotação é usada para definir a coluna no banco de dados que mapeia o campo anotado.
     private String nome;
 
+
     @Column(name="autor")
     private String autor;
 
-
+    @JsonFormat(pattern="HH:mm:ss")
     @Column(name="tempo")
     private Time tempo;
 
     @Column(name="recorrencia")
     private int recorrencia;
 
+    @JsonProperty("atribuir")
     @Column(name="atribuir_para")
     private String atribuirPara;
 
 
+    @JsonFormat(pattern="yyyy-MM-dd HH:mm:ss")
     @Column(name="horario_dia")
     private LocalDateTime horarioDia;
 
@@ -71,6 +76,7 @@ public class Tarefa {
         return atribuirPara;
     }
 
+    @JsonProperty("horario")
     public LocalDateTime getHorario_dia() {
         return horarioDia;
     }

@@ -13,8 +13,8 @@ import java.time.LocalDateTime;
 public class Tarefa {
 
     Tarefa(){}
-    @Id //@Ida anotação é para a chave primária.
-    private int id;
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY) //@Ida anotação é para a chave primária.
+    private Integer id;
 
     @Column(name = "nome") //@Columna anotação é usada para definir a coluna no banco de dados que mapeia o campo anotado.
     private String nome;
@@ -28,7 +28,7 @@ public class Tarefa {
     private Time tempo;
 
     @Column(name="recorrencia")
-    private int recorrencia;
+    private Integer recorrencia;
 
     @JsonProperty("atribuir")
     @Column(name="atribuir_para")
@@ -52,7 +52,7 @@ public class Tarefa {
 
 
     //GERAÇÃO GET
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
@@ -68,7 +68,7 @@ public class Tarefa {
         return tempo;
     }
 
-    public int getRecorrencia() {
+    public Integer getRecorrencia() {
         return recorrencia;
     }
 
@@ -83,7 +83,7 @@ public class Tarefa {
 
 
     //GERAÇÃO SET
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -99,7 +99,7 @@ public class Tarefa {
         this.tempo = tempo;
     }
 
-    public void setRecorrencia(int recorrencia) {
+    public void setRecorrencia(Integer recorrencia) {
         this.recorrencia = recorrencia;
     }
 

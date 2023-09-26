@@ -2216,3 +2216,13 @@ DELETE * FROM TAREFA WHERE ID =0 [42001-214]
 2023-09-18 20:09:44 jdbc[13]: exception
 org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "DELETE [*]*FROM TAREFA WHERE ID =0"; expected "identifier"; SQL statement:
 DELETE *FROM TAREFA WHERE ID =0 [42001-214]
+2023-09-26 12:23:07 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "[*]describe COLUMNS from TAREFA"; expected "DELETE, DROP, DECLARE, DEALLOCATE"; SQL statement:
+describe COLUMNS from TAREFA [42001-214]
+2023-09-26 12:26:29 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "elect * from information_schema.indexes where TAREFA = [*]'TAREFA"; SQL statement:
+elect * from information_schema.indexes where TAREFA = 'TAREFA [42000-214]
+2023-09-26 12:36:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-26 12:39:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]

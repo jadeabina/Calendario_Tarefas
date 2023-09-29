@@ -1,6 +1,7 @@
 package com.agenda.tarefas.models;
 
 
+import com.agenda.tarefas.validation.ValidaCampos;
 import jakarta.persistence.Entity;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -22,9 +23,17 @@ public class TarefaResource {
         this.tarefaRepository= tarefaRepository;
     }
 
+
     @PostMapping
     public ResponseEntity<Tarefa> save(@RequestBody Tarefa tarefa){
-        tarefaRepository.save(tarefa);
+        if( ValidaCampos.validaTamanhoString(tarefa.getNome(),30) &&
+            ValidaCampos.validaTamanhoString(tarefa.getAutor(),30)  ){
+            tarefaRepository.save(tarefa);
+        }else{
+            return new ResponseEntity("Por favor, preencha o nome corretamente. Máx. 30 caracteres.", HttpStatus.NOT_ACCEPTABLE);
+        }
+
+
         return new ResponseEntity<>(tarefa, HttpStatus.OK);
     }
     @GetMapping

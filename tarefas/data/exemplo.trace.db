@@ -2226,3 +2226,17 @@ elect * from information_schema.indexes where TAREFA = 'TAREFA [42000-214]
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
 2023-09-26 12:39:08 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-26 15:31:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-09-26 16:35:31 jdbc[24]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NOME CHARACTER VARYING(30)": "'limparJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKLLLLL... (116)"; SQL statement:
+insert into tarefa (atribuir_para,autor,horario_dia,nome,recorrencia,tempo,id) values (?,?,?,?,?,?,default) [22001-214]
+2023-09-26 16:35:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NOME CHARACTER VARYING(30)": "'limparJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKLLLLL... (116)"; SQL statement:
+insert into tarefa (atribuir_para,autor,horario_dia,nome,recorrencia,tempo,id) values (?,?,?,?,?,?,default) [22001-214]
+2023-09-26 16:39:04 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NOME CHARACTER VARYING(30)": "'limparJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKLLLLL... (116)"; SQL statement:
+insert into tarefa (atribuir_para,autor,horario_dia,nome,recorrencia,tempo,id) values (?,?,?,?,?,?,default) [22001-214]
+2023-09-26 16:42:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLDataException: Value too long for column "NOME CHARACTER VARYING(30)": "'limparJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKLLLLL... (116)"; SQL statement:
+insert into tarefa (atribuir_para,autor,horario_dia,nome,recorrencia,tempo,id) values (?,?,?,?,?,?,default) [22001-214]

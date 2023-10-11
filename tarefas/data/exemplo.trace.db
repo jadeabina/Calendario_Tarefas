@@ -2240,3 +2240,7 @@ insert into tarefa (atribuir_para,autor,horario_dia,nome,recorrencia,tempo,id) v
 2023-09-26 16:42:55 jdbc[3]: exception
 org.h2.jdbc.JdbcSQLDataException: Value too long for column "NOME CHARACTER VARYING(30)": "'limparJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKJKLLLLL... (116)"; SQL statement:
 insert into tarefa (atribuir_para,autor,horario_dia,nome,recorrencia,tempo,id) values (?,?,?,?,?,?,default) [22001-214]
+2023-10-04 16:10:28 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]
+2023-10-04 16:11:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLNonTransientException: The object is already closed [90007-214]

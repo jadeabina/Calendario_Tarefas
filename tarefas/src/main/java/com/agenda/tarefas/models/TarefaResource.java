@@ -26,11 +26,23 @@ public class TarefaResource {
 
     @PostMapping
     public ResponseEntity<Tarefa> save(@RequestBody Tarefa tarefa){
-        if( ValidaCampos.validaTamanhoString(tarefa.getNome(),30) &&
-            ValidaCampos.validaTamanhoString(tarefa.getAutor(),30)  ){
+        var listerros = new ArrayList<String>();
+
+        var erronome =  ValidaCampos.validaTamanhoString(tarefa.getNome(),30);
+        if (erronome != null ) listerros.add(erronome);
+
+        var errohora = ValidaCampos.validaHoras(tarefa.getTempo());
+        if (errohora != null) listerros.add(errohora);
+
+        var errorecorrencia=ValidaCampos.validaNumeros(tarefa.getRecorrencia());
+        if (errorecorrencia != null) listerros.add(errorecorrencia);
+
+
+        if( listerros.isEmpty() )
+        {
             tarefaRepository.save(tarefa);
         }else{
-            return new ResponseEntity("Por favor, preencha o nome corretamente. Máx. 30 caracteres.", HttpStatus.NOT_ACCEPTABLE);
+            return new ResponseEntity(listerros.toString(), HttpStatus.NOT_ACCEPTABLE);
         }
 
 

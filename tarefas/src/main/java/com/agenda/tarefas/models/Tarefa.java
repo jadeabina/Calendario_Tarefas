@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 
 import java.sql.Time;
 import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 @Entity //@Entity anotação indica que a classe é uma classe Java persistente.
 @Table(name = "tarefa") // @Table a anotação fornece a tabela que mapeia esta entidade.
@@ -25,7 +26,7 @@ public class Tarefa {
 
     @JsonFormat(pattern="HH:mm:ss")
     @Column(name="tempo")
-    private Time tempo;
+    private LocalTime tempo;
 
     @Column(name="recorrencia")
     private Integer recorrencia;
@@ -40,7 +41,7 @@ public class Tarefa {
     private LocalDateTime horarioDia;
 
 
-    public Tarefa(String nome, String autor, Time tempo,int recorrencia,String atribuirPara,LocalDateTime horarioDia ){
+    public Tarefa(String nome, String autor, LocalTime tempo,int recorrencia,String atribuirPara,LocalDateTime horarioDia ){
         this.nome=nome;
         this.autor= autor;
         this.tempo= tempo;
@@ -64,7 +65,7 @@ public class Tarefa {
         return autor;
     }
 
-    public Time getTempo() {
+    public LocalTime  getTempo() {
         return tempo;
     }
 
@@ -95,7 +96,7 @@ public class Tarefa {
         this.autor = autor;
     }
 
-    public void setTempo(Time tempo) {
+    public void setTempo( LocalTime  tempo) {
         this.tempo = tempo;
     }
 
